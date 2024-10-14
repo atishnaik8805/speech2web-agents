@@ -81,6 +81,11 @@ text = "John Doe, a software developer from San Francisco, attended a conference
 
 # Convert text to JSON using the schema
 json_data = create_schema(text)
+
+def transcription2JSONmain(text):
+    json_data = create_schema(text)
+    print("JSON Conversion", json_data) 
+    return json_data
 print(json_data)
 
 
