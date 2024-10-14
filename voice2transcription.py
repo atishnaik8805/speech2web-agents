@@ -63,6 +63,7 @@
 #     main()
 
 
+## Install pip install git+https://github.com/openai/whisper.git 
 
 import whisper
 import sounddevice as sd

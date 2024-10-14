@@ -32,6 +32,8 @@
 # print(json_output)
 
 
+## Run this python -m spacy download en_core_web_sm
+
 import spacy
 import subprocess
 import os
