@@ -1,0 +1,7 @@
+pyautogen
+python-dotenv
+torch
+numpy
+spacy
+requests
+git+https://github.com/openai/whisper.git
