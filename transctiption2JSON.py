@@ -1,8 +1,8 @@
-import json
 import subprocess
 
 import spacy
-from spacy.tokens.doc import Doc
+
+import src.schema.sample_schema_01 as sample_schema_01
 
 
 # Function to check and download the SpaCy model
@@ -19,39 +19,17 @@ def load_spacy_model(model_name="en_core_web_sm"):
 
 
 # Load the SpaCy model
-nlp = load_spacy_model()
-
-
-# Define schema
-def create_schema(text) -> str:
-  doc: Doc = nlp(text)
-  data: dict = {"Person": {}, "Location": {}, "Event": {}}
-
-  # Extract entities and fill the schema
-  for ent in doc.ents:
-    if ent.label_ == "PERSON":
-      data["Person"]["Name"] = ent.text
-    elif ent.label_ == "GPE":
-      data["Location"]["City"] = ent.text
-    elif ent.label_ == "DATE":
-      data["Event"]["Date"] = ent.text
-    elif ent.label_ == "ORG":
-      data["Person"]["Occupation"] = ent.text
-
-  return json.dumps(data, indent=4)
-
+nlp: spacy.language.Language = load_spacy_model()
 
 # Sample text
 text = "John Doe, a software developer from San Francisco, attended a conference on October 5, 2024."
 
 # Convert text to JSON using the schema
-json_data: str = create_schema(text)
+json_data: str = sample_schema_01.create_schema(text, nlp)
+print(json_data)
 
 
-def transcription2JSONmain(text) -> str:
-  json_data: str = create_schema(text)
+def transcription2JSONmain(text: str) -> str:
+  json_data: str = sample_schema_01.create_schema(text, nlp)
   print("JSON Conversion", json_data)
   return json_data
-
-
-print(json_data)
