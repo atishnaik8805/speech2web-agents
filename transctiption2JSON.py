@@ -6,7 +6,7 @@ import src.schema.sample_schema_01 as sample_schema_01
 
 
 # Function to check and download the SpaCy model
-def load_spacy_model(model_name="en_core_web_sm"):
+def load_spacy_model(model_name="en_core_web_sm") -> spacy.language.Language:
   try:
     # Try to load the model
     nlp = spacy.load(model_name)
@@ -14,7 +14,7 @@ def load_spacy_model(model_name="en_core_web_sm"):
     # Model not found, download it
     print(f"Model {model_name} not found. Downloading now...")
     subprocess.run(["python", "-m", "spacy", "download", model_name])
-    nlp = spacy.load(model_name)
+    nlp: spacy.language.Language = spacy.load(model_name)
   return nlp
 
 
