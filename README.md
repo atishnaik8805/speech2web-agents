@@ -38,6 +38,18 @@ pip install git+https://github.com/openai/whisper.git
 >
 > `spacy` blocks upgrade to Python `3.12`.
 
+#### Run
+
+- Open this repo using VS Code.
+- Select `speech2web` as the interpreter (see bottom right).
+- Run using play/run button in VS Code (see top right).
+
+Alternatively, you can also use PowerShell to run the Python script.
+
+```ps
+& "$env:LocalAppData\miniforge3\envs\speech2web\python.exe" app-gradio.py
+```
+
 #### Upgrade
 
 ```sh
