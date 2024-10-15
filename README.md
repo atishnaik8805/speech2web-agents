@@ -56,3 +56,13 @@ existing environment is **not** recommended.
 # Remove environment
 mamba remove -n speech2web --all
 ```
+
+## API Keys
+
+- Create `.env` file in the root of this repo.
+- Sign up for Groq Cloud from https://console.groq.com/login.
+
+```py
+# .env
+GROQ_API_KEY = "secret"
+```
