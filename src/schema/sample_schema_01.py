@@ -1,12 +1,16 @@
 import json
 
 import spacy
+from spacy import displacy
 from spacy.tokens.doc import Doc
 
 
-def create_schema(text: str, nlp: spacy.language.Language) -> str:
+def create_schema(text: str, nlp: spacy.language.Language, debug: bool = False) -> str:
   doc: Doc = nlp(text)
   data: dict = {"Person": {}, "Location": {}, "Event": {}}
+
+  if debug:
+    displacy.serve(doc, style="ent", host="localhost")
 
   # Extract entities and fill the schema
   for ent in doc.ents:
