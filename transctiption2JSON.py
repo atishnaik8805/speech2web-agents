@@ -7,7 +7,7 @@ import src.schema.task_schema_01 as task_schema_01
 
 
 # Function to check and download the SpaCy model
-def load_spacy_model(model_name="en_core_web_sm") -> spacy.language.Language:
+def load_spacy_model(model_name="en_core_web_md") -> spacy.language.Language:
   try:
     # Try to load the model
     nlp = spacy.load(model_name)
