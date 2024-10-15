@@ -3,7 +3,6 @@ python-dotenv
 torch
 numpy
 spacy
-git+https://github.com/openai/whisper.git
 groq
 sounddevice
 soundfile
