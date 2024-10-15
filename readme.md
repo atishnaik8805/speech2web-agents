@@ -11,7 +11,7 @@ This project provides a system for transcribing audio (both uploaded files and l
 
 ## Prerequisites
 
-- Python 3.10
+- Python 3.10 or 3.11
 - Groq API key
 - Internet connection for API calls
 
@@ -30,13 +30,10 @@ This project provides a system for transcribing audio (both uploaded files and l
    pip install -r requirements.txt
    ```
 
-3. Download the SpaCy English model:
+3. Create a `.env` file in the project root and add your Groq API key
 
-   ```
-   python -m spacy download en_core_web_sm
-   ```
+   Sign up for Groq Cloud from https://console.groq.com/login.
 
-4. Create a `.env` file in the project root and add your Groq API key:
    ```
    GROQ_API_KEY=your_groq_api_key_here
    ```
