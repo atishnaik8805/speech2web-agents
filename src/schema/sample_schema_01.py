@@ -3,6 +3,7 @@ import json
 import spacy
 from spacy import displacy
 from spacy.tokens.doc import Doc
+from src.helper.userIdGenerator import generate_user_id
 
 
 def create_schema(text: str, nlp: spacy.language.Language, debug: bool = False) -> str:
@@ -15,6 +16,7 @@ def create_schema(text: str, nlp: spacy.language.Language, debug: bool = False) 
   # Extract entities and fill the schema
   for ent in doc.ents:
     if ent.label_ == "PERSON":
+      data["Person"]["UserID"] = generate_user_id(ent.text)
       data["Person"]["Name"] = ent.text
     elif ent.label_ == "GPE":
       data["Location"]["City"] = ent.text

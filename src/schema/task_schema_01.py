@@ -6,6 +6,7 @@ from spacy.matcher import Matcher
 from spacy.tokens.doc import Doc
 
 from src.helper.date import SUPPORTED_DATE_TOKENS, parse_date_from_token
+from src.helper.userIdGenerator import generate_user_id
 
 
 def create_schema(text: str, nlp: spacy.language.Language, debug: bool = False) -> str:
@@ -37,6 +38,7 @@ def create_schema(text: str, nlp: spacy.language.Language, debug: bool = False) 
   data["Task"]["Description"] = longest_matched_task
   for ent in doc.ents:
     if ent.label_ == "PERSON":
+      data["Person"]["UserID"] = generate_user_id(ent.text)
       data["Person"]["Name"] = ent.text
     if ent.label_ == "TIME":
       data["Task"]["Duration"] = ent.text
