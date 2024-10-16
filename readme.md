@@ -1,6 +1,8 @@
 # Voice Transcription and JSON Conversion
 
-This project provides a system for transcribing audio (both uploaded files and live recordings) and converting the transcriptions into a structured JSON format.
+This project provides a system for transcribing audio (both uploaded files and
+live recordings) and converting the transcriptions into a structured JSON
+format.
 
 ## Features
 
@@ -48,7 +50,8 @@ To use the command-line interface for voice recording and transcription:
 python app.py
 ```
 
-This will start recording audio from your microphone, transcribe it, and output the result.
+This will start recording audio from your microphone, transcribe it, and output
+the result.
 
 ### Gradio Web Interface
 
@@ -58,7 +61,8 @@ To launch the Gradio web interface:
 python app-gradio.py
 ```
 
-This will start a local web server. Open the provided URL in your browser to access the interface, where you can:
+This will start a local web server. Open the provided URL in your browser to
+access the interface, where you can:
 
 - Upload audio files for transcription
 - Record live audio for transcription
@@ -66,7 +70,8 @@ This will start a local web server. Open the provided URL in your browser to acc
 
 ## License
 
-This project is licensed under the GNU General Public License v3.0. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the GNU General Public License v3.0. See the
+[LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
 
