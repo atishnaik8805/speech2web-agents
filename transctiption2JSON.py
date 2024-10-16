@@ -24,8 +24,8 @@ def load_spacy_model(model_name="en_core_web_md") -> spacy.language.Language:
 nlp: spacy.language.Language = load_spacy_model()
 
 # Sample text
-text = "John Doe1, a software developer from San Francisco, attended a conference on October 5, 2024."
-task_text = "I'm John Doe1, today I installed glass panels on the car for 5 hours for Acme Industries."
+text = "Nick Oberoi, a software developer from San Francisco, attended a conference on October 5, 2024."
+task_text = "I'm Nick Oberoi, today I installed glass panels on the car for 5 hours for Acme Industries."
 
 # Convert text to JSON using the schema
 json_data: str = sample_schema_01.create_schema(text, nlp)
