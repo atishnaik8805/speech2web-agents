@@ -69,6 +69,7 @@ mamba install python=3.11
 mamba install ruff pyautogen numpy requests groq python-sounddevice pysoundfile gradio
 mamba install -c pytorch pytorch
 mamba install spacy
+mamba install pymongo
 ```
 
 > [!NOTE]
