@@ -24,24 +24,27 @@ def load_spacy_model(model_name="en_core_web_md") -> spacy.language.Language:
 nlp: spacy.language.Language = load_spacy_model()
 
 # Sample text
-text = "Nick Oberoi, a software developer from San Francisco, attended a conference on October 5, 2024."
-task_text = "I'm Nick Oberoi, today I installed glass panels on the car for 5 hours for Acme Industries."
+# text = "Nick Oberoi, a software developer from San Francisco, attended a conference on October 5, 2024."
+# task_text = "I'm Nick Oberoi, today I installed glass panels on the car for 5 hours for Acme Industries."
 
-# Convert text to JSON using the schema
-json_data: str = sample_schema_01.create_schema(text, nlp)
-print(json_data)
+# # Convert text to JSON using the schema
+# json_data: str = sample_schema_01.create_schema(text, nlp)
+# print(json_data)
 
-task_json: str = task_schema_01.create_schema(task_text, nlp)
-print(task_json)
+# task_json: str = task_schema_01.create_schema(task_text, nlp)
+# print(task_json)
 
 # Store Events data in MongoDB
-insert_person_event(json_data)
+#insert_person_event(json_data)
 
 # Store Task data in MongoDB
-insert_jobs(task_json)
+#insert_jobs(task_json)
 
 
-def transcription2JSONmain(text: str) -> str:
-  json_data: str = sample_schema_01.create_schema(text, nlp)
+def transcription2JSONmain(text: str, schema: str) -> str:
+  if schema == 'events':
+    json_data: str = sample_schema_01.create_schema(text, nlp)
+  else:
+    json_data: str = task_schema_01.create_schema(text, nlp)
   print("JSON Conversion", json_data)
   return json_data

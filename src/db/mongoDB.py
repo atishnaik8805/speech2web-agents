@@ -20,10 +20,10 @@ except Exception as e:
 def insert_person_event(json_data: str):
   eventsCollection = db["PersonEvents"]
   personDocument = json.loads(json_data)
-  eventsCollection.insert_one(personDocument)
+  return eventsCollection.insert_one(personDocument)
 
 
 def insert_jobs(json_data: str):
   taskCollection = db["Jobs"]
   taskDocument = json.loads(json_data)
-  taskCollection.insert_one(taskDocument)
+  return taskCollection.insert_one(taskDocument)

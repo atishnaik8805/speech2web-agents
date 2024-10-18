@@ -15,6 +15,7 @@ def create_schema(text: str, nlp: spacy.language.Language, debug: bool = False) 
 
   # Extract entities and fill the schema
   for ent in doc.ents:
+    print(ent.label, ent.text)
     if ent.label_ == "PERSON":
       data["Person"]["UserID"] = generate_user_id(ent.text)
       data["Person"]["Name"] = ent.text

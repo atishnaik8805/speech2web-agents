@@ -1,0 +1,17 @@
+[[pages]]
+path = "pages/home.py"
+name = "Welcome to 🗣️2🌐"
+icon = ""
+
+
+[[pages]]
+path = "pages/events.py"
+name = "Plans"
+icon = "📅"
+url_path="events"
+
+[[pages]]
+path = "pages/jobs.py"
+name = "Jobs"
+icon = "👷"
+url_path = "Jobs" # You can override the default url path for a page
