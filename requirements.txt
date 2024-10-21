@@ -9,3 +9,5 @@ soundfile
 gradio
 pymongo
 streamlit
+streamlit-audiorec
+st-pages
